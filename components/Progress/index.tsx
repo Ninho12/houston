@@ -7,23 +7,28 @@ import TypographyMUI from '@material-ui/core/Typography';
 
 import { useTheme } from '../ThemeProvider/context';
 
-type CircularProgressPropsExtends = 'className' | 'style' | 'color' | 'variant';
+type CircularProgressPropsExtends = 'id' | 'className' | 'style';
 
 export interface ICircularProgressProps extends Pick<CircularProgressProps, CircularProgressPropsExtends> {
-  type: 'line' | 'rounded' | 'percentage';
+  type: 'rounded' | 'percentage';
   total?: number;
   current: number;
+  loading: boolean;
 }
 
 const Progress = React.forwardRef<HTMLDivElement, ICircularProgressProps>(props => {
   const theme = useTheme();
 
-  const { type, total, current } = props;
+  const { type, total, current, loading, id, style, className } = props;
 
   return (
     <ThemeProvider theme={theme}>
-      <BoxMUI position='relative' display='inline-flex'>
-        <CircularProgressMUI variant='determinate' value={Math.round((current * 100) / total)} />
+      <BoxMUI position='relative' display='inline-flex' id={id} className={className}>
+        <CircularProgressMUI
+          variant='determinate'
+          style={loading ? { ...style, color: '#cdcdcd' } : style}
+          value={loading ? 100 : Math.round((current * 100) / total)}
+        />
         <BoxMUI
           top={0}
           left={0}
@@ -34,9 +39,13 @@ const Progress = React.forwardRef<HTMLDivElement, ICircularProgressProps>(props 
           alignItems='center'
           justifyContent='center'
         >
-          <TypographyMUI variant='caption' component='div' color='textSecondary'>
-            {type === 'rounded' ? `${current}/${total}` : `${Math.round((current * 100) / total)}%`}
-          </TypographyMUI>
+          {loading ? (
+            <CircularProgressMUI />
+          ) : (
+            <TypographyMUI variant='caption' component='div' color='textSecondary'>
+              {type === 'rounded' ? `${current}/${total}` : `${Math.round((current * 100) / total)}%`}
+            </TypographyMUI>
+          )}
         </BoxMUI>
       </BoxMUI>
     </ThemeProvider>

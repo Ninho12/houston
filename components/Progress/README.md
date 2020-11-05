@@ -33,6 +33,8 @@ or
 | className | `string` | false | - |
 | style | `React.CSSProperties` | false | - |
 | type | `rounded`, `percentage` | false | `rounded` |
+| current | `number` | true | - |
+| total | `number` | true | - |
 | id | `string` | false | - |
 | loading | `boolean` | false | `false` |
 | color | `string` | false | `primary` |
