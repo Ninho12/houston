@@ -8,7 +8,8 @@ const fontSizes = {
   medium: 20,
   large: 24,
   'x-large': 32,
-  'xx-large': 40
+  'xx-large': 40,
+  docs: 16
 };
 
 const lineHeights = {

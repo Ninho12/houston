@@ -5,6 +5,7 @@ import themeVariable from './variables';
 const typography: TypographyOptions = {
   fontFamily: themeVariable.fontFamily,
   fontSize: themeVariable.textSize(),
+  htmlFontSize: themeVariable.textSize(),
 
   body1: {
     fontFamily: themeVariable.fontFamily,
