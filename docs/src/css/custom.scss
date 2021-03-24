@@ -48,21 +48,19 @@ h3 {
 /* Admonition */
 .admonition {
   font-size: 90%;
-}
 
-.admonition code {
-  background-color: rgba(0,0,0, .1);
-  color: var(--ifm-alert-color);
+  code {
+    background-color: rgba(0,0,0, .1);
+    color: var(--ifm-alert-color);
+  }
 }
 
 /* Header styles */
-
 article header h1 {
   font-size: 2rem !important;
 }
 
 /* Navbar styles */
-
 .navbar {
   background-color: var(--ifm-color-primary);
 }
@@ -82,7 +80,6 @@ article header h1 {
 }
 
 /* Menu styles */
-
 .menu {
   padding-top: 40px !important;
 }
@@ -106,7 +103,6 @@ article header h1 {
 }
 
 /* Pagination navigator styles */
-
 .pagination-nav {
   border-top: 1px solid var(--ifm-color-emphasis-300);
   padding-top: 32px;
@@ -117,17 +113,15 @@ article header h1 {
 }
 
 /* Tabs */
-
 .custom-tabs {
   margin: 24px 0 0 0;
-}
 
-.custom-tabs .tabs__item {
-  font-size: 90%;
+  .tabs__item {
+    font-size: 90%;
+  }
 }
 
 /* Table of contents */
-
 .table-of-contents__link--active {
   font-weight: var(--ifm-font-weight-bold);
 }

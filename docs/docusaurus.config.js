@@ -1,3 +1,5 @@
+const vsDark = require('prism-react-renderer/themes/vsDark');
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Houston',
@@ -10,57 +12,58 @@ module.exports = {
   organizationName: 'eduzz',
   projectName: 'houston',
   themes: ['@docusaurus/theme-live-codeblock'],
+  plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
     colorMode: {
-      disableSwitch: true,
+      disableSwitch: true
     },
     prism: {
-      theme: require('prism-react-renderer/themes/vsDark'),
-      darkTheme: require('prism-react-renderer/themes/vsDark'),
+      theme: vsDark,
+      darkTheme: vsDark
     },
     algolia: {
       apiKey: 'YOUR_API_KEY',
       indexName: 'YOUR_INDEX_NAME',
       contextualSearch: true,
-      searchParameters: {},
+      searchParameters: {}
     },
     navbar: {
       title: 'HOUSTON',
       style: 'dark',
       logo: {
         alt: 'Houston - Design System',
-        src: 'img/logo.svg',
+        src: 'img/logo.svg'
       },
       items: [
         {
           to: 'docs/',
           activeBasePath: 'src/pages/docs',
           label: 'Design',
-          position: 'right',
+          position: 'right'
         },
         {
           to: 'docs/',
           activeBasePath: 'src/pages/docs',
           label: 'Conteúdo',
-          position: 'right',
+          position: 'right'
         },
         {
           to: 'docs/',
           activeBasePath: 'src/pages/docs',
           label: 'Componentes',
-          position: 'right',
+          position: 'right'
         },
         {
           href: 'https://github.com/eduzz/houston/releases',
           label: 'Versões',
-          position: 'right',
+          position: 'right'
         },
         {
           href: 'https://github.com/eduzz/houston',
           label: 'GitHub',
-          position: 'right',
-        },
-      ],
+          position: 'right'
+        }
+      ]
     },
     footer: {
       style: 'dark',
@@ -70,64 +73,62 @@ module.exports = {
           items: [
             {
               label: 'Style Guide',
-              to: 'docs/',
+              to: 'docs/'
             }
-          ],
+          ]
         },
         {
           title: 'Community',
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              href: 'https://stackoverflow.com/questions/tagged/docusaurus'
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discordapp.com/invite/docusaurus'
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
+              href: 'https://twitter.com/docusaurus'
+            }
+          ]
         },
         {
           title: 'More',
           items: [
             {
               label: 'Blog',
-              to: 'blog',
+              to: 'blog'
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
+              href: 'https://github.com/facebook/docusaurus'
+            }
+          ]
+        }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Houston by Eduzz.`,
-    },
+      copyright: `Copyright © ${new Date().getFullYear()} Houston by Eduzz.`
+    }
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      '@docusaurus/preset-bootstrap',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/eduzz/houston/tree/master/docs',
+          editUrl: 'https://github.com/eduzz/houston/tree/master/docs'
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/eduzz/houston/tree/master/docs',
+          editUrl: 'https://github.com/eduzz/houston/tree/master/docs'
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      },
-    ],
-  ],
+          customCss: require.resolve('./src/css/custom.scss')
+        }
+      }
+    ]
+  ]
 };
