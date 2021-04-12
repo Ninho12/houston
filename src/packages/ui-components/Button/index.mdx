@@ -1,0 +1,77 @@
+---
+name: Button
+route: /components/button
+menu: Components
+---
+
+import { Playground } from 'docz';
+import Button from './';
+import Row from '../Grid/Row';
+import Column from '../Grid/Column';
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+
+# Button
+
+Botões permitem que os usuários tomem ações e decisões com um simples toque.
+
+### Importação
+
+```js
+import Button from '@eduzz/houston-ui/Button';
+```
+
+### Exemplo
+
+<Playground>
+  <Row>
+    <Column>
+      <Button>Contained</Button>
+    </Column>
+    <Column>
+      <Button variant='outlined'>Outlined</Button>
+    </Column>
+    <Column>
+      <Button variant='text'>Text</Button>
+    </Column>
+  </Row>
+</Playground>
+
+### Comportamentos
+
+<Playground>
+  <Row>
+    <Column>
+      <Button disabled>Disabled</Button>
+    </Column>
+    <Column>
+      <Button loading>loading</Button>
+    </Column>
+  </Row>
+</Playground>
+
+### Com ícones
+
+<Playground>
+  <Row>
+    <Column>
+      <Button startIcon={<InsertEmoticonIcon />}>Start</Button>
+    </Column>
+    <Column>
+      <Button endIcon={<InsertEmoticonIcon />}>End</Button>
+    </Column>
+  </Row>
+</Playground>
+
+## Props
+
+| prop      | tipo             | obrigatório | padrão    |
+| --------- | ---------------- | ----------- | --------- |
+| disabled  | `boolean`        | `false`     | `false`   |
+| startIcon | `React.Node`     | `false`     | -         |
+| endIcon   | `React.Node`     | `false`     | -         |
+| variant   | `IButtonVariant` | `false`     | `primary` |
+| href      | `string`         | `false`     | -         |
+| endIcon   | `React.Node`     | `false`     | -         |
+| fullWidth | `boolean`        | `false`     | `false`   |
+| loading   | `boolean`        | `false`     | `false`   |
+| onClick   | `function`       | `false`     | -         |

@@ -23,32 +23,34 @@ export interface IBoxProps extends Pick<BoxProps, BoxPropsExtends> {
 }
 
 const Box = React.memo<IBoxProps>(({ id, children, xs, sm, md, lg, xl, className }) => {
+  const defaultMargin = React.useMemo(() => '16px 0', []);
+
   const useStyles = makeStyles(theme =>
     createStyles({
       box: {
         [theme.breakpoints.up('xs')]: {
           padding: xs && xs?.padding,
-          margin: xs && xs?.margin ? xs?.margin : '16px 0'
+          margin: xs && xs?.margin ? xs?.margin : defaultMargin
         },
 
         [theme.breakpoints.up('sm')]: {
           padding: sm && sm?.padding,
-          margin: sm && sm?.margin ? sm?.margin : '16px 0'
+          margin: sm && sm?.margin ? sm?.margin : defaultMargin
         },
 
         [theme.breakpoints.up('md')]: {
           padding: md && md?.padding,
-          margin: md && md?.margin ? md?.margin : '16px 0'
+          margin: md && md?.margin ? md?.margin : defaultMargin
         },
 
         [theme.breakpoints.up('lg')]: {
           padding: lg && lg?.padding,
-          margin: lg && lg?.margin ? lg?.margin : '16px 0'
+          margin: lg && lg?.margin ? lg?.margin : defaultMargin
         },
 
         [theme.breakpoints.up('xl')]: {
           padding: xl && xl?.padding,
-          margin: xl && xl?.margin ? xl?.margin : '16px 0'
+          margin: xl && xl?.margin ? xl?.margin : defaultMargin
         }
       }
     })

@@ -1,0 +1,42 @@
+---
+name: Box
+route: /components/box
+menu: Components
+---
+
+import { Playground } from 'docz';
+import Alert from './';
+import Box from '../Box';
+
+# Box
+
+O componente Box serve como um componente encapsulador (wrapper) para a auxiliar na maioria das necessidades de uso com CSS.
+
+### Importação
+
+```js
+import Box from '@eduzz/houston-ui/Box';
+```
+
+### Exemplo
+
+<Playground>
+  <Box
+    xs={{ margin: 0, padding: 0 }}
+    sm={{ margin: '0 12px', padding: 20 }}
+    md={{ margin: '0 12px', padding: 20 }}
+    lg={{ margin: '0 12px', padding: 20 }}
+  >
+    Your component here
+  </Box>
+</Playground>
+
+## Props
+
+| prop | tipo            | obrigatório | padrão                             | descrição                                                                                         |
+| ---- | --------------- | ----------- | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
+| xs   | `IBoxSpacement` | `false`     | `{ margin: '16px 0', padding: 0 }` | Se um valor for definido apenas em xs, todos os outros pontos de interrupção terão o mesmo valor. |
+| sm   | `IBoxSpacement` | `false`     | `{ margin: '16px 0', padding: 0 }` | -                                                                                                 |
+| md   | `IBoxSpacement` | `false`     | `{ margin: '16px 0', padding: 0 }` | -                                                                                                 |
+| lg   | `IBoxSpacement` | `false`     | `{ margin: '16px 0', padding: 0 }` | -                                                                                                 |
+| xl   | `IBoxSpacement` | `false`     | `{ margin: '16px 0', padding: 0 }` | -                                                                                                 |
